@@ -5,10 +5,13 @@ package org.lenzi.sample.websocket.model;
 
 import java.io.Serializable;
 
+import org.springframework.stereotype.Component;
+
 /**
  * @author slenzi
  *
  */
+@Component
 public class HelloMessage implements Serializable {
 
 	/**
