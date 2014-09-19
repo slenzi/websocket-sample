@@ -22,7 +22,7 @@ public class ReplyMessage implements Serializable {
 	private String message = null;
 	
 	public ReplyMessage(){
-		
+		message = "Reply not set.";
 	}
 	
 	public ReplyMessage(String message) {

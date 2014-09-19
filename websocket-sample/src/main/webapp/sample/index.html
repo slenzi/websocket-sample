@@ -20,8 +20,11 @@
             stompClient.connect({}, function(frame) {
                 setConnected(true);
                 console.log('Connected: ' + frame);
-                stompClient.subscribe('simplebroker/replies', function(greeting){
-                    showGreeting(JSON.parse(greeting.body).content);
+                stompClient.subscribe('/simplebroker/replies', function(socketMessage){
+                	console.log("Subscribed STOMP event received:\n" + JSON.stringify(socketMessage));
+                    var bodyObj = JSON.parse(socketMessage.body);
+                    alert("Message = " + bodyObj.message);
+                	showGreeting(bodyObj.message);
                 });
             });
         }
@@ -38,10 +41,11 @@
         function sendHelloMessage() {
             var helloMessage = document.getElementById('helloMessage').value;
             /*stompClient.send("/mysample/dohello", {}, JSON.stringify({ 'name': name }));*/
-            stompClient.send("/websocket-sample/spring/hello", {}, JSON.stringify({ 'message': helloMessage }));
+            stompClient.send("/app/hello", {}, JSON.stringify({ 'message': helloMessage }));
         }
         
         function showGreeting(message) {
+        	alert(message);
             var response = document.getElementById('response');
             var p = document.createElement('p');
             p.style.wordWrap = 'break-word';

@@ -43,7 +43,7 @@ public class HelloController {
 		
 		Thread.sleep(1000); // simulate delay
 		
-		return new ReplyMessage("Reply From Server. Original message = " + message);
+		return new ReplyMessage("Reply From Server. Original message = " + message.getMessage());
 	}
 
 }

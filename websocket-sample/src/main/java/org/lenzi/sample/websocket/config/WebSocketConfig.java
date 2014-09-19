@@ -33,6 +33,8 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 		//super.configureMessageBroker(registry);
 		registry.enableSimpleBroker("/simplebroker");
 		
+		registry.setApplicationDestinationPrefixes("/app");
+		
 		logger.info(registry.toString());
 	}
 
