@@ -16,7 +16,7 @@ import org.springframework.stereotype.Controller;
  *
  */
 @Controller
-public class HelloController{
+public class HelloController {
 
 	private Logger logger = LoggerFactory.getLogger(HelloController.class);
 	
@@ -38,8 +38,11 @@ public class HelloController{
     @MessageMapping("/hello")
 	@SendTo("/simplebroker/replies")	
 	public ReplyMessage processHello(HelloMessage message) throws Exception {
-		logger.info("processHello called");
+		
+    	logger.info("processHello called");
+		
 		Thread.sleep(1000); // simulate delay
+		
 		return new ReplyMessage("Reply From Server. Original message = " + message);
 	}
 
