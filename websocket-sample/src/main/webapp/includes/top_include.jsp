@@ -12,6 +12,7 @@ CSS
 -->
 <link rel="stylesheet" href="<%=request.getContextPath() %>/bower_components/angular-material/angular-material.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/bower_components/angular-material/themes/default-theme.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/bower_components/angular-material/themes/indigo-theme.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/bower_components/angular-material/themes/deep-orange-theme.css">
 <!--
 <link rel="stylesheet" href="<%=request.getContextPath() %>/bower_components/html5-boilerplate/css/normalize.css">

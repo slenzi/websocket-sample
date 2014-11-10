@@ -48,11 +48,11 @@
 					-->
 				
 					<p>
-						<a href="${pageContext.request.contextPath}/sample/index.html">Run Chat Sample</a>
+						<a href="<%=request.getContextPath() %>/sample/index.html">Run Chat Sample</a>
 					</p>
 				
 					<p>
-						<a href="${pageContext.request.contextPath}/spring/test">Run MVC Test</a>
+						<a href="<%=request.getContextPath() %>/spring/test">Run MVC Test</a>
 					</p>
 					
 					<p hide show-md>

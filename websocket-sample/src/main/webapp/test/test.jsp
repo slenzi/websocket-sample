@@ -29,7 +29,7 @@
 
 	<md-sidenav class="md-sidenav-left md-whiteframe-z2" component-id="left" is-locked-open="$media('md')">
 	
-		<md-toolbar class="md-theme-indigo">
+		<md-toolbar md-theme="deep-orange">
 			
 			<h1 class="md-toolbar-tools">Chat Menu</h1>
 		
@@ -59,7 +59,20 @@
 		</md-content>
 	
 	</md-sidenav>
-
+	
+	<div layout="vertical" layout-fill tabIndex="-1" role="main">
+		
+		<md-toolbar md-theme="indigo">
+			
+			<div class="md-toolbar-tools" ng-click="openMenu()">
+				<md-icon icon="<%=request.getContextPath() %>/img/ic_menu_24px.svg" hide-md></md-icon>
+				<h1 class="md-toolbar-tools">
+	        		<span>Spring MVC Test</span>
+	      		</h1>
+			</div>
+      		
+    	</md-toolbar>
+    	
 	<%
 	String message = (String)request.getAttribute("message");
 	if(message != null){
@@ -68,6 +81,8 @@
 		out.println("No message found in request...");
 	}
 	%>
+  
+	</div>
 
 	<jsp:include page="/includes/bottom_include.jsp" />
 
