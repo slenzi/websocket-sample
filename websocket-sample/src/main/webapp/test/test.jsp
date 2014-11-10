@@ -25,7 +25,7 @@
 	<jsp:include page="/includes/top_include.jsp" />
 
 </head>
-<body layout="horizontal">
+<body ng-controller="AppCtrl" layout="horizontal">
 
 	<md-sidenav class="md-sidenav-left md-whiteframe-z2" component-id="left" is-locked-open="$media('md')">
 	
@@ -38,10 +38,6 @@
 		<md-content class="md-padding" ng-controller="LeftCtrl">
 
 			<md-button ng-click="close()" class="md-raised" hide-md>[X] Close Menu</md-button>
-			
-			<!--
-			<md-button ng-click="close()" class="md-primary" hide-md>[X] Close Menu</md-button>
-			-->
 		
 			<p>
 				<a href="<%=request.getContextPath() %>">Home</a>
@@ -64,7 +60,7 @@
 		
 		<md-toolbar md-theme="indigo">
 			
-			<div class="md-toolbar-tools" ng-click="openMenu()">
+			<div class="md-toolbar-tools" ng-click="toggleLeft()">
 				<md-icon icon="<%=request.getContextPath() %>/img/ic_menu_24px.svg" hide-md></md-icon>
 				<h1 class="md-toolbar-tools">
 	        		<span>Spring MVC Test</span>
