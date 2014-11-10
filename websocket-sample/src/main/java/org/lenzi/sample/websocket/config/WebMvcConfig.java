@@ -6,6 +6,7 @@ package org.lenzi.sample.websocket.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -28,7 +29,8 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 	 */
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-		configurer.enable("MyDefaultServletHandler");
+		//configurer.enable("MyDefaultServletHandler");
+		configurer.enable();
 	}
 
 	/**
@@ -47,6 +49,16 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/js/**").addResourceLocations("/js/").setCachePeriod(31556926);
 		 */
 	}
+	
+	/**
+	 * For multipart form/data requests.
+	 * 
+	 * @return
+	 */
+	@Bean(name = "multipartResolver")
+    public CommonsMultipartResolver getMultipartResolver() {
+        return new CommonsMultipartResolver();
+    }
 
 	/* Resolve JSP views from WEB-INF/pages directory.
 	@Bean

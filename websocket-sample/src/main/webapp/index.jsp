@@ -15,29 +15,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="">
-<!--
+
+	<!--
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	-->
 
-<meta name="viewport"
-	content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-<!-- 
-	CSS
-	-->
-<link rel="stylesheet"
-	href="bower_components/angular-material/angular-material.css">
-<link rel="stylesheet"
-	href="bower_components/angular-material/themes/default-theme.css">
-<!--
-	<link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
-	<link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
-	-->
-
-<!-- Modernizr JS -->
-<!--
-	<script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
-	-->
+	<jsp:include page="/includes/top_include.jsp" />
 
 </head>
 <body>
@@ -55,15 +40,19 @@
 				</md-toolbar>
 				
 				<md-content class="md-padding" ng-controller="LeftCtrl">
-				
+
+					<md-button ng-click="close()" class="md-raised" hide-md>[X] Close Menu</md-button>
+					
+					<!--
 					<md-button ng-click="close()" class="md-primary" hide-md>[X] Close Menu</md-button>
+					-->
 				
 					<p>
-						<a href="sample/index.html">Run Chat Sample</a>
+						<a href="${pageContext.request.contextPath}/sample/index.html">Run Chat Sample</a>
 					</p>
 				
 					<p>
-						<a href="spring/test">Run MVC Test</a>
+						<a href="${pageContext.request.contextPath}/spring/test">Run MVC Test</a>
 					</p>
 					
 					<p hide show-md>
@@ -93,6 +82,12 @@
 					<md-button ng-click="toggleRight()" class="md-primary">Toggle right menu</md-button>
 				</div>
 				
+				<p>
+			    <md-button class="md-primary md-fab" md-theme="deep-orange">
+			      (X)
+			    </md-button>
+			    </p>
+				
 			</div>
 
 			</md-content>
@@ -115,23 +110,7 @@
 
 	</div>
 
-	<!--[if lt IE 7]>
-	    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
-
-	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/angular-aria/angular-aria.js"></script>
-	<script src="bower_components/angular-animate/angular-animate.js"></script>
-	<script src="bower_components/hammerjs/hammer.js"></script>
-	<script src="bower_components/angular-material/angular-material.js"></script>
-	<script src="bower_components/angular-route/angular-route.js"></script>
-	<script src="bower_components/angular-resource/angular-resource.js"></script>
-	
-	<script src="js/app.js"></script>
-	<script src="js/services.js"></script>
-	<script src="js/controllers.js"></script>
-	<script src="js/filters.js"></script>
-	<script src="js/directives.js"></script>
+	<jsp:include page="/includes/bottom_include.jsp" />
 
 </body>
 </html>
