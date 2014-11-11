@@ -48,7 +48,7 @@
 					-->
 				
 					<p>
-						<a href="<%=request.getContextPath() %>/sample/index.html">Run Chat Sample</a>
+						<a href="<%=request.getContextPath() %>/chat/index.html">Run Chat Sample</a>
 					</p>
 				
 					<p>
