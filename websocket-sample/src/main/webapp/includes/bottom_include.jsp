@@ -15,8 +15,8 @@ request.getContextPath()
 <jsp:include page="bower_components.jsp" />
 
 <%--common javascript --%>
-<script src="<%=request.getContextPath() %>/js/app.js"></script>
-<script src="<%=request.getContextPath() %>/js/services.js"></script>
-<script src="<%=request.getContextPath() %>/js/controllers.js"></script>
-<script src="<%=request.getContextPath() %>/js/filters.js"></script>
-<script src="<%=request.getContextPath() %>/js/directives.js"></script>
+<script src="<%=request.getContextPath() %>/common/app.js"></script>
+<script src="<%=request.getContextPath() %>/common/services.js"></script>
+<script src="<%=request.getContextPath() %>/common/controllers.js"></script>
+<script src="<%=request.getContextPath() %>/common/filters.js"></script>
+<script src="<%=request.getContextPath() %>/common/directives.js"></script>
