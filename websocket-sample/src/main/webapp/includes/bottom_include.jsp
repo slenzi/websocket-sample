@@ -14,6 +14,7 @@ request.getContextPath()
 <%--all web components managed by bower --%>
 <jsp:include page="bower_components.jsp" />
 
+<%--common javascript --%>
 <script src="<%=request.getContextPath() %>/js/app.js"></script>
 <script src="<%=request.getContextPath() %>/js/services.js"></script>
 <script src="<%=request.getContextPath() %>/js/controllers.js"></script>

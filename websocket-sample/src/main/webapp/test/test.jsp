@@ -10,16 +10,11 @@
 <!--<![endif]-->
 <head>
 
-<title>Test Spring MVC</title>
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="">
-
-	<!--
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	-->
-
+	<title>Test Spring MVC</title>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
 	<jsp:include page="/includes/top_include.jsp" />
@@ -27,57 +22,44 @@
 </head>
 <body ng-controller="AppCtrl" layout="horizontal">
 
+	<%-- left side nav --%>
 	<md-sidenav class="md-sidenav-left md-whiteframe-z2" component-id="left" is-locked-open="$media('md')">
-	
 		<md-toolbar md-theme="deep-orange">
-			
 			<h1 class="md-toolbar-tools">Chat Menu</h1>
-		
 		</md-toolbar>
-		
 		<md-content class="md-padding" ng-controller="LeftCtrl">
-
 			<md-button ng-click="close()" class="md-raised" hide-md>[X] Close Menu</md-button>
-		
 			<p>
 				<a href="<%=request.getContextPath() %>">Home</a>
 			</p>
-		
 			<p>
 				<a href="<%=request.getContextPath() %>/chat/index.html">Run Chat Sample</a>
 			</p>
-			
 			<p hide show-md>
 				This sidenav is locked open on your device. To go
 				back to the default behavior, narrow your display.
 			</p>
-			
 		</md-content>
-	
 	</md-sidenav>
 	
+	<%--main content --%>
 	<div layout="vertical" layout-fill tabIndex="-1" role="main">
-		
 		<md-toolbar md-theme="indigo">
-			
 			<div class="md-toolbar-tools" ng-click="toggleLeft()">
-				<md-icon icon="<%=request.getContextPath() %>/img/ic_menu_24px.svg" hide-md></md-icon>
+				<md-icon icon="<%=request.getContextPath() %>/assets/img/ic_menu_24px.svg" hide-md></md-icon>
 				<h1 class="md-toolbar-tools">
 	        		<span>Spring MVC Test</span>
 	      		</h1>
 			</div>
-      		
     	</md-toolbar>
-    	
-	<%
-	String message = (String)request.getAttribute("message");
-	if(message != null){
-		out.println("Message = " + message);
-	}else{
-		out.println("No message found in request...");
-	}
-	%>
-  
+		<%
+		String message = (String)request.getAttribute("message");
+		if(message != null){
+			out.println("Message = " + message);
+		}else{
+			out.println("No message found in request...");
+		}
+		%>
 	</div>
 
 	<jsp:include page="/includes/bottom_include.jsp" />
